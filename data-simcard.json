@@ -1,0 +1,18 @@
+[
+  {
+    "site_name": "SITE A",
+    "phone_number": "081234567890",
+    "provider": "Telkomsel",
+    "date_regis": "2025-07-01",
+    "remaining_balance": "Rp 100.000",
+    "description": "Aktif"
+  },
+  {
+    "site_name": "SITE B",
+    "phone_number": "081298765432",
+    "provider": "Indosat",
+    "date_regis": "2025-07-02",
+    "remaining_balance": "Rp 75.000",
+    "description": "Cadangan"
+  }
+]
