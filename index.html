@@ -20,15 +20,18 @@
     }
 
     .sidebar {
-      width: 220px;
+      width: 260px;
       background-color: #1e293b;
       color: #fff;
       padding: 30px 20px;
+      overflow-y: auto;
     }
 
-    .sidebar h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
+    .sidebar .nav-category {
+      margin: 20px 0 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #94a3b8;
     }
 
     .sidebar ul {
@@ -36,15 +39,23 @@
     }
 
     .sidebar ul li {
-      padding: 10px;
+      padding: 12px 10px;
       cursor: pointer;
       color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .sidebar ul li:hover {
       background-color: #334155;
       border-radius: 6px;
       color: #fff;
+    }
+
+    .sidebar ul li svg {
+      width: 20px;
+      height: 20px;
     }
 
     .main {
@@ -86,15 +97,47 @@
 </head>
 <body>
   <div class="sidebar">
-    <h2>Dashboard Menu</h2>
-    <ul>
-      <li>Dasbord OP</li>
-      <li>Sim Card</li>
-      <li>Transaction</li>
-      <li>History</li>
-      <li>Report</li>
-      <li>Setting</li>
-      <li>Logout</li>
+    <ul class="nav" id="mainMenu">
+      <li class="nav-item nav-category">Main</li>
+      <li class="nav-item active">
+        <a href="/dashboard" class="nav-link active">
+          📦 <span class="link-title">Dashboard OP</span>
+        </a>
+      </li>
+
+      <li class="nav-item nav-category">Web Apps</li>
+      <li class="nav-item">
+        <a href="/provider" class="nav-link">
+          📡 <span class="link-title">Provider</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/card" class="nav-link">
+          📱 <span class="link-title">Sim Card</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/transaction" class="nav-link">
+          💳 <span class="link-title">Transaction</span>
+        </a>
+      </li>
+
+      <li class="nav-item nav-category">Miscellaneous</li>
+      <li class="nav-item">
+        <a href="/user" class="nav-link">
+          👥 <span class="link-title">Users</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/logs" class="nav-link">
+          📈 <span class="link-title">Logs</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/site" class="nav-link">
+          🌐 <span class="link-title">Site</span>
+        </a>
+      </li>
     </ul>
   </div>
   <div class="main">
