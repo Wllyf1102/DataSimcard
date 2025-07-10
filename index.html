@@ -137,107 +137,48 @@
     <ul class="nav" id="mainMenu">
       <li class="nav-item nav-category">Main</li>
       <li class="nav-item active">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" onclick="showDashboard()">
           <i class="fas fa-box"></i> <span class="link-title">Dashboard OP</span>
         </a>
       </li>
 
       <li class="nav-item nav-category">Web Apps</li>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" onclick="showProvider()">
           <i class="fas fa-broadcast-tower"></i> <span class="link-title">Provider</span>
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" onclick="showSimCard()">
           <i class="fas fa-sim-card"></i> <span class="link-title">Sim Card</span>
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" onclick="showTransaction()">
           <i class="fas fa-credit-card"></i> <span class="link-title">Transaction</span>
         </a>
       </li>
 
       <li class="nav-item nav-category">Miscellaneous</li>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" onclick="showUsers()">
           <i class="fas fa-users"></i> <span class="link-title">Users</span>
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" onclick="showLogs()">
           <i class="fas fa-chart-line"></i> <span class="link-title">Logs</span>
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" onclick="showSite()">
           <i class="fas fa-globe"></i> <span class="link-title">Site</span>
         </a>
       </li>
     </ul>
   </div>
   <div class="main">
-    <div class="dashboard-cards">
-      <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-sim-card"></i>
-        </div>
-        <div class="card-content">
-          <h3>Simcard Available</h3>
-          <p id="simcard-available">123</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-icon" style="background-color:#fff7ed;color:#f97316;">
-          <i class="fas fa-exclamation-triangle"></i>
-        </div>
-        <div class="card-content">
-          <h3>Almost Expiry</h3>
-          <p id="simcard-almost">4</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-icon" style="background-color:#fee2e2;color:#dc2626;">
-          <i class="fas fa-calendar-times"></i>
-        </div>
-        <div class="card-content">
-          <h3>Expired</h3>
-          <p id="simcard-expired">2</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="table-container">
-      <h4 class="mb-3">Data Provider</h4>
-      <table>
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama Provider</th>
-            <th>Jumlah Simcard</th>
-            <th>Status</th>
-            <th>Tanggal Dibuat</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Telkomsel</td>
-            <td>14</td>
-            <td><span class="badge bg-success">Aktif</span></td>
-            <td>2025-07-10</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Indosat</td>
-            <td>8</td>
-            <td><span class="badge bg-secondary">Nonaktif</span></td>
-            <td>2025-06-28</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <!-- Konten utama tetap di sini -->
   </div>
 </body>
 </html>
