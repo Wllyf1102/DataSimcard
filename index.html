@@ -2,66 +2,105 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simcard Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard OP - Simcard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f4f6f8;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #1e293b;
+      color: #fff;
+      padding: 30px 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      padding: 10px;
+      cursor: pointer;
+      color: #cbd5e1;
+    }
+
+    .sidebar ul li:hover {
+      background-color: #334155;
+      border-radius: 6px;
+      color: #fff;
+    }
+
+    .main {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 400px;
+    }
+
+    .card-icon {
+      background-color: #e0f2fe;
+      color: #0284c7;
+      padding: 16px;
+      border-radius: 50%;
+      font-size: 24px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 5px;
+      color: #334155;
+      font-size: 18px;
+    }
+
+    .card-content p {
+      font-size: 24px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+  </style>
 </head>
 <body>
   <div class="sidebar">
-    <h2>Menu</h2>
+    <h2>Dashboard Menu</h2>
     <ul>
-      <li onclick="showSection('dashboard')">Dasbord OP</li>
-      <li onclick="showSection('simcard')">Sim Card</li>
-      <li onclick="showSection('transaction')">Transaction</li>
+      <li>Dasbord OP</li>
+      <li>Sim Card</li>
+      <li>Transaction</li>
     </ul>
   </div>
-
-  <div class="main-content">
-    <section id="dashboard">
-      <h1>Dasbord OP</h1>
-      <div class="card">
-        <h2>Simcard Available</h2>
-        <p id="simcard-count">0</p>
+  <div class="main">
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <div class="card-content">
+        <h3>Simcard Available</h3>
+        <p>123</p>
       </div>
-    </section>
-
-    <section id="simcard" style="display:none;">
-      <h1>Data Simcard</h1>
-      <button onclick="alert('Fitur tambah simcard belum tersedia')">+ Create | Simcard</button>
-      <table>
-        <thead>
-          <tr>
-            <th>SITE NAME</th>
-            <th>PHONE NUMBER</th>
-            <th>PROVIDER</th>
-            <th>DATE REGIS</th>
-            <th>REMAINING BALANCE</th>
-            <th>DESCRIPTION</th>
-          </tr>
-        </thead>
-        <tbody id="simcard-table"></tbody>
-      </table>
-    </section>
-
-    <section id="transaction" style="display:none;">
-      <h1>Mutasi Simcard</h1>
-      <input type="text" id="searchNumber" placeholder="Search Phone Number" />
-      <button onclick="searchTransaction()">Cari</button>
-      <div id="searchResult"></div>
-      <table id="transaction-table" style="display:none;">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Keterangan</th>
-            <th>TYPE</th>
-            <th>SALDO</th>
-          </tr>
-        </thead>
-        <tbody id="mutasi-body"></tbody>
-      </table>
-    </section>
+    </div>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
