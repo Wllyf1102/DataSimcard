@@ -2,11 +2,11 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dashboard OP - Simcard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     * {
@@ -15,13 +15,11 @@
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
-
     body {
       display: flex;
       min-height: 100vh;
       background-color: #f4f6f8;
     }
-
     .sidebar {
       width: 260px;
       background-color: #1e293b;
@@ -29,19 +27,15 @@
       padding: 30px 20px;
       overflow-y: auto;
     }
-
     .sidebar .nav-category {
       margin: 20px 0 10px;
       font-size: 12px;
       text-transform: uppercase;
       color: #94a3b8;
     }
-
     .sidebar ul {
       list-style: none;
-      padding-left: 0;
     }
-
     .sidebar ul li {
       padding: 12px 10px;
       cursor: pointer;
@@ -50,31 +44,26 @@
       align-items: center;
       gap: 10px;
     }
-
     .sidebar ul li:hover,
     .sidebar ul li.active {
       background-color: #334155;
       border-radius: 6px;
       color: #fff;
     }
-
     .sidebar ul li i {
       width: 20px;
       height: 20px;
     }
-
     .main {
       flex: 1;
       padding: 40px;
     }
-
     .dashboard-cards {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       margin-bottom: 40px;
     }
-
     .card {
       background-color: #ffffff;
       padding: 30px;
@@ -86,7 +75,6 @@
       flex: 1;
       min-width: 250px;
     }
-
     .card-icon {
       background-color: #e0f2fe;
       color: #0284c7;
@@ -94,36 +82,30 @@
       border-radius: 50%;
       font-size: 24px;
     }
-
     .card-content h3 {
       margin-bottom: 5px;
       color: #334155;
       font-size: 18px;
     }
-
     .card-content p {
       font-size: 24px;
       font-weight: 600;
       color: #0f172a;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
-
     table thead {
       background-color: #e2e8f0;
     }
-
     table th,
     table td {
       padding: 12px;
       border: 1px solid #cbd5e1;
       text-align: left;
     }
-
     .table-container {
       background: #fff;
       padding: 24px;
@@ -136,49 +118,240 @@
   <div class="sidebar">
     <ul class="nav" id="mainMenu">
       <li class="nav-item nav-category">Main</li>
-      <li class="nav-item active">
-        <a href="#" class="nav-link" onclick="showDashboard()">
-          <i class="fas fa-box"></i> <span class="link-title">Dashboard OP</span>
-        </a>
+      <li class="nav-item active" data-menu="dashboard">
+        <i class="fas fa-box"></i>
+        <span class="link-title">Dashboard OP</span>
       </li>
 
       <li class="nav-item nav-category">Web Apps</li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" onclick="showProvider()">
-          <i class="fas fa-broadcast-tower"></i> <span class="link-title">Provider</span>
-        </a>
+      <li class="nav-item" data-menu="provider">
+        <i class="fas fa-broadcast-tower"></i>
+        <span class="link-title">Provider</span>
       </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" onclick="showSimCard()">
-          <i class="fas fa-sim-card"></i> <span class="link-title">Sim Card</span>
-        </a>
+      <li class="nav-item" data-menu="simcard">
+        <i class="fas fa-sim-card"></i>
+        <span class="link-title">Sim Card</span>
       </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" onclick="showTransaction()">
-          <i class="fas fa-credit-card"></i> <span class="link-title">Transaction</span>
-        </a>
+      <li class="nav-item" data-menu="transaction">
+        <i class="fas fa-credit-card"></i>
+        <span class="link-title">Transaction</span>
       </li>
 
       <li class="nav-item nav-category">Miscellaneous</li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" onclick="showUsers()">
-          <i class="fas fa-users"></i> <span class="link-title">Users</span>
-        </a>
+      <li class="nav-item" data-menu="users">
+        <i class="fas fa-users"></i>
+        <span class="link-title">Users</span>
       </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" onclick="showLogs()">
-          <i class="fas fa-chart-line"></i> <span class="link-title">Logs</span>
-        </a>
+      <li class="nav-item" data-menu="logs">
+        <i class="fas fa-chart-line"></i>
+        <span class="link-title">Logs</span>
       </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" onclick="showSite()">
-          <i class="fas fa-globe"></i> <span class="link-title">Site</span>
-        </a>
+      <li class="nav-item" data-menu="site">
+        <i class="fas fa-globe"></i>
+        <span class="link-title">Site</span>
       </li>
     </ul>
   </div>
   <div class="main">
-    <!-- Konten utama tetap di sini -->
+    <!-- Dashboard Content -->
+    <section class="content-section" id="dashboard">
+      <div class="dashboard-cards">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-sim-card"></i>
+          </div>
+          <div class="card-content">
+            <h3>Simcard Available</h3>
+            <p id="simcard-available">123</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background-color:#fff7ed;color:#f97316;">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="card-content">
+            <h3>Almost Expiry</h3>
+            <p id="simcard-almost">4</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background-color:#fee2e2;color:#dc2626;">
+            <i class="fas fa-calendar-times"></i>
+          </div>
+          <div class="card-content">
+            <h3>Expired</h3>
+            <p id="simcard-expired">2</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Provider Content -->
+    <section class="content-section" id="provider" style="display:none;">
+      <div class="table-container">
+        <h4 class="mb-3">Data Provider</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Provider</th>
+              <th>Jumlah Simcard</th>
+              <th>Status</th>
+              <th>Tanggal Dibuat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Telkomsel</td>
+              <td>14</td>
+              <td><span class="badge bg-success">Aktif</span></td>
+              <td>2025-07-10</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Indosat</td>
+              <td>8</td>
+              <td><span class="badge bg-secondary">Nonaktif</span></td>
+              <td>2025-06-28</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sim Card Content -->
+    <section class="content-section" id="simcard" style="display:none;">
+      <div class="table-container">
+        <h4 class="mb-3">Data Sim Card</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Phone Number</th>
+              <th>Provider</th>
+              <th>Date Regist</th>
+              <th>Remaining Balance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>081234567890</td>
+              <td>Telkomsel</td>
+              <td>2025-01-01</td>
+              <td>50000</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>089876543210</td>
+              <td>Indosat</td>
+              <td>2025-02-01</td>
+              <td>35000</td>
+              <td>Active</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Transaction Content -->
+    <section class="content-section" id="transaction" style="display:none;">
+      <div class="table-container">
+        <h4 class="mb-3">Transaction Search</h4>
+        <input type="text" id="search-number" class="form-control mb-3" placeholder="Search Phone Number" />
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Keterangan</th>
+              <th>TYPE</th>
+              <th>SALDO</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-results">
+            <!-- Data hasil pencarian muncul di sini -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Miscellaneous Sections -->
+    <section class="content-section" id="users" style="display:none;">
+      <h3>Users Section (Coming Soon)</h3>
+    </section>
+    <section class="content-section" id="logs" style="display:none;">
+      <h3>Logs Section (Coming Soon)</h3>
+    </section>
+    <section class="content-section" id="site" style="display:none;">
+      <h3>Site Section (Coming Soon)</h3>
+    </section>
   </div>
+
+  <script>
+    // Fungsi untuk pindah tab menu dan konten
+    const menuItems = document.querySelectorAll('.sidebar ul li.nav-item');
+    const contentSections = document.querySelectorAll('.content-section');
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active dari semua menu
+        menuItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+
+        // Hide semua section konten
+        contentSections.forEach(section => (section.style.display = 'none'));
+
+        // Tampilkan section yang sesuai dengan menu yg di klik
+        const menu = item.getAttribute('data-menu');
+        if (menu) {
+          const section = document.getElementById(menu);
+          if (section) section.style.display = 'block';
+        }
+      });
+    });
+
+    // Simulasi data transaksi untuk search
+    const transactions = [
+      { date: '2025-07-10', desc: 'Top Up', type: 'Credit', saldo: 500000 },
+      { date: '2025-07-09', desc: 'Pulsa keluar', type: 'Debit', saldo: 450000 },
+      { date: '2025-07-08', desc: 'Bonus', type: 'Credit', saldo: 470000 },
+    ];
+
+    const searchInput = document.getElementById('search-number');
+    const resultsBody = document.getElementById('transaction-results');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        resultsBody.innerHTML = '';
+
+        if (query.length === 0) return;
+
+        // Filter transaksi yang nomor cocok (simulasi: semua muncul)
+        const filtered = transactions.filter(t =>
+          t.desc.toLowerCase().includes(query) || t.type.toLowerCase().includes(query)
+        );
+
+        // Tampilkan hasil
+        if (filtered.length === 0) {
+          resultsBody.innerHTML = '<tr><td colspan="4">No data found</td></tr>';
+        } else {
+          filtered.forEach(t => {
+            resultsBody.innerHTML += `
+              <tr>
+                <td>${t.date}</td>
+                <td>${t.desc}</td>
+                <td>${t.type}</td>
+                <td>${t.saldo.toLocaleString()}</td>
+              </tr>
+            `;
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
