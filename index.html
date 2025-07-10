@@ -104,6 +104,29 @@
       font-weight: 600;
       color: #0f172a;
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table thead {
+      background-color: #e2e8f0;
+    }
+
+    table th, table td {
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      text-align: left;
+    }
+
+    .table-container {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
   </style>
 </head>
 <body>
@@ -180,6 +203,37 @@
           <p id="simcard-expired">2</p>
         </div>
       </div>
+    </div>
+
+    <div class="table-container">
+      <h4 class="mb-3">Data Provider</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Provider</th>
+            <th>Jumlah Simcard</th>
+            <th>Status</th>
+            <th>Tanggal Dibuat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Telkomsel</td>
+            <td>14</td>
+            <td><span class="badge bg-success">Aktif</span></td>
+            <td>2025-07-10</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Indosat</td>
+            <td>8</td>
+            <td><span class="badge bg-secondary">Nonaktif</span></td>
+            <td>2025-06-28</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </body>
