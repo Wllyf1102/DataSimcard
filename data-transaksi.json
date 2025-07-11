@@ -1,23 +1,17 @@
-[
-  {
-    "phone_number": "081234567890",
-    "date": "2025-07-03",
-    "keterangan": "Top Up",
-    "type": "IN",
-    "saldo": "Rp 50.000"
-  },
-  {
-    "phone_number": "081234567890",
-    "date": "2025-07-05",
-    "keterangan": "Pemakaian",
-    "type": "OUT",
-    "saldo": "Rp 30.000"
-  },
-  {
-    "phone_number": "081298765432",
-    "date": "2025-07-04",
-    "keterangan": "Top Up",
-    "type": "IN",
-    "saldo": "Rp 25.000"
-  }
-]
+import React from 'react';
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import Provider from './pages/Provider';
+import CreateProvider from './pages/CreateProvider';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/provider" element={<Provider />} />
+        <Route path="/provider/create" element={<CreateProvider />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
