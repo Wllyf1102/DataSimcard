@@ -1,7 +1,13 @@
 
-# +Create Provider Page
+# Provider Management App
 
-This is a simple React + Tailwind CSS page to create and list SIM card providers.
+Simple React + Tailwind app with routing to manage SIM card providers.
+
+## Features
+
+- Provider listing page with "+ Create Provider" button
+- Separate page to add new provider (name + status)
+- Client-side routing using react-router-dom
 
 ## Setup
 
@@ -9,9 +15,3 @@ This is a simple React + Tailwind CSS page to create and list SIM card providers
 npm install
 npm run dev
 ```
-
-## Features
-
-- Add provider name and SIM type
-- Show added provider list
-- Tailwind styling
